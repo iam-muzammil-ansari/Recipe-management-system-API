@@ -8,6 +8,7 @@
   - [Repository](#repository)
   - [Utility (EmailHandler and PasswordEncrypter)](#utility-emailhandler-and-passwordencrypter)
   - [Database Design](#database-design)
+  - [DataToObject](#datatoobject)
 - [Data Structure Used](#data-structure-used)
 - [Project Summary](#project-summary)
 - [Getting Started](#getting-started)
