@@ -2,11 +2,14 @@ package com.geekster.Recipe_management_system_API.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -15,10 +18,12 @@ import java.time.LocalDateTime;
 @Table(name = "comments")
 public class Comment {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long commentId;
 
+    @NotBlank
     @Column(nullable = false, length = 1000)
     private String commentBody;
 
@@ -26,7 +31,7 @@ public class Comment {
     private LocalDateTime commentCreationTimeStamp;
 
     @ManyToOne
-    @JoinColumn(name = "fk_comment_post_id", nullable = false)
+    @JoinColumn(name = "fk_comment_recipe_id", nullable = false)
     private Recipe recipe;
 
     @ManyToOne

@@ -12,6 +12,7 @@ import com.geekster.Recipe_management_system_API.service.hashingUtility.Password
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class UserService {
 
@@ -159,4 +160,6 @@ public class UserService {
         String recipeOwnerEmail = comment.getRecipe().getOwner().getEmail();
         return recipeOwnerEmail.equals(email) || commentOwnerEmail.equals(email);
     }
+
+
 }

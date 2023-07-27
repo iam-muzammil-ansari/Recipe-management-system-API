@@ -7,9 +7,11 @@ import com.geekster.Recipe_management_system_API.service.AuthenticationService;
 import com.geekster.Recipe_management_system_API.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@Validated
 @RequestMapping("/user")
 public class UserController {
 

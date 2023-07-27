@@ -45,15 +45,15 @@ public class RecipeService {
             Optional<Recipe> existingRecipe = recipeRepo.findRecipeByRecipeId(recipe.getRecipeId());
 
             if (existingRecipe.isPresent()) {
-                Recipe existingRecipe1 = existingRecipe.get();
+                Recipe newRecipe = existingRecipe.get();
 
-                if(existingRecipe1.getOwner().equals(recipeOwner)) {
-                    existingRecipe1.setRecipeName(recipe.getRecipeName());
-                    existingRecipe1.setIngredients(recipe.getIngredients());
-                    existingRecipe1.setInstructions(recipe.getInstructions());
-                    existingRecipe1.setCookingTimeInMinutes(recipe.getCookingTimeInMinutes());
+                if(newRecipe.getOwner().equals(recipeOwner)) {
+                    newRecipe.setRecipeName(recipe.getRecipeName());
+                    newRecipe.setIngredients(recipe.getIngredients());
+                    newRecipe.setInstructions(recipe.getInstructions());
+                    newRecipe.setCookingTimeInMinutes(recipe.getCookingTimeInMinutes());
 
-                    return recipeRepo.save(existingRecipe1);
+                    return recipeRepo.save(newRecipe);
                 }else {
                     return "Recipe does not belong to the user!!";
                 }

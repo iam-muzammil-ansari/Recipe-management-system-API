@@ -42,7 +42,7 @@ public class RecipeController {
     }
 
     @PutMapping("update/recipe")
-    public Object updateRecipeByName(@Valid @RequestParam String email, @RequestParam String token, @RequestBody Recipe recipe) {
+    public Object updateRecipeByName(@Valid @RequestBody Recipe recipe, @Valid @RequestParam String email, @RequestParam String token) {
         if(authenticationService.authenticate(email, token)) {
             return recipeService.updateRecipe(recipe,email);
         }else {
