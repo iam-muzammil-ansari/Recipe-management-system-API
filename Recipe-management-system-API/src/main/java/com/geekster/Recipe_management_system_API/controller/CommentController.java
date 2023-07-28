@@ -49,7 +49,7 @@ public class CommentController {
         }
     }
     @DeleteMapping("comment")
-    public String removeInstaComment(@RequestParam Long commentId, @RequestParam String email, @RequestParam String token)
+    public String removeRecipeComment(@RequestParam Long commentId, @RequestParam String email, @RequestParam String token)
     {
         if(authenticationService.authenticate(email,token)) {
             return userService.removeRecipeComment(commentId,email);
